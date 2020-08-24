@@ -18,29 +18,29 @@ object CommentJsonController {
       (__ \ "parent_post_id").write[String] and
       (__ \ "comment_count").write[Int] and
       (__ \ "posted_at").write[LocalDateTime]
-    )(unlift(Comment.unapply))
+  )(unlift(Comment.unapply))
 
   // Comment情報を受け取る為のケースクラス
   case class CommentForm(
-                          user_id: String,
-                          text: String
-                        )
+      user_id: String,
+      text: String
+  )
   // CommentをJSONに変換するためのWritesを定義
   implicit val commentFormWrites: Writes[CommentForm] = (
     (__ \ "user_id").write[String] and
       (__ \ "text").write[String]
-    )(unlift(CommentForm.unapply))
+  )(unlift(CommentForm.unapply))
 
   // JSONをCommentFormに変換するためのReadsを定義
   implicit val commentFormReads: Reads[CommentForm] = (
     (__ \ "user_id").read[String] and
       (__ \ "text").read[String]
-    )(CommentForm)
+  )(CommentForm)
 
 }
 
 class CommentJsonController @Inject()(components: ControllerComponents)
-  extends AbstractController(components) {
+    extends AbstractController(components) {
 
   import CommentJsonController._
 
