@@ -19,18 +19,18 @@ object PostJsonController {
   implicit val postFormWrites: Writes[PostForm] = (
     (__ \ "user_id").write[String] and
       (__ \ "text").write[String]
-    )(unlift(PostForm.unapply))
+  )(unlift(PostForm.unapply))
 
   // JSONをPostFormに変換するためのReadsを定義
   implicit val postFormReads: Reads[PostForm] = (
     (__ \ "user_id").read[String] and
       (__ \ "text").read[String]
-    )(PostForm)
+  )(PostForm)
 
 }
 
 class PostJsonController @Inject()(components: ControllerComponents)
-  extends AbstractController(components) {
+    extends AbstractController(components) {
 
   import PostJsonController._
   import FormatterController._
