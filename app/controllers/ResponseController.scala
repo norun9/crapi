@@ -10,6 +10,5 @@ object Meta {
   implicit val metaWrites = (
     (__ \ "status").write[Int] and
       (__ \ "errorMessage").write[String]
-    )(unlift(Meta.unapply))
+  )(unlift(Meta.unapply))
 }
-
