@@ -1,11 +1,11 @@
 
-Create new in post table
+## Create new in post table
 
-request
+***request***
 
 `curl -X POST -H "Content-Type:application/json" -d '{"user_id":"11111111-1111-1111-1111-111111111111","text":"hello world"}' localhost:9000/posts/create`
 
-response
+***response***
 
 `{"result":"OK"}`
 
@@ -16,21 +16,21 @@ response
 
 post index
 
-request
+***request***
 
 `curl -XGET http://localhost:9000/posts`
 
-response
+***response***
 
 `{"posts":[[{"id":"17ff0e30-050a-4af3-b803-af4fe3b0d380","user_id":"11111111-1111-1111-1111-111111111111","text":"hello world","comment_count":0,"posted_at":"2020-08-24T22:33:51.58"},[],[]]]}`
 
 comment create
 
-request
+***request***
 
 `curl -X POST -H "Content-Type:application/json" -d '{"user_id": "11111111-1111-1111-1111-111111111111", "text": "Comment"}' localhost:9000/posts/17ff0e30-050a-4af3-b803-af4fe3b0d380/comments/create`
 
-response
+***response***
 
 `{"result":"OK"}`
 
@@ -42,17 +42,17 @@ response
 
 Comment index
 
-request
+***request***
 
 `curl -X GET http://localhost:9000/posts/17ff0e30-050a-4af3-b803-af4fe3b0d380/comments`
 
-response
+***response***
 
 `{"comments":[{"id":"a4203cb4-966d-46bc-9d2d-5309d238f20e","user_id":"11111111-1111-1111-1111-111111111111","text":"Comment","parent_post_id":"17ff0e30-050a-4af3-b803-af4fe3b0d380","comment_count":0,"posted_at":"2020-08-24T22:36:27.556"}]}`
 
 Create a comment for optional comment
 
-request
+***request***
 
 `curl -X POST -H "Content-Type:application/json" -d '{"user_id": "11111111-1111-1111-1111-111111111111", "text": "nest comment"}' localhost:9000/posts/a4203cb4-966d-46bc-9d2d-5309d238f20e/comments/create`
 
