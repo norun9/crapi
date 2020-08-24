@@ -59,6 +59,6 @@
 
 |Id|User_id|Text|Parent_post_id|Comment_count|Posted_at|
 |--|-------|----|--------------|-------------|---------|
-|7b4ec80d-6bab-4d3f-8014-bfcce3d21961|11111111-1111-1111-1111-111111111111|nest comment|17ff0e30-050a-4af3-b803-af4fe3b0d380|0|2020-08-24 22:38:59.027121|
+|7b4ec80d-6bab-4d3f-8014-bfcce3d21961|11111111-1111-1111-1111-111111111111|nest comment|a4203cb4-966d-46bc-9d2d-5309d238f20e|0|2020-08-24 22:38:59.027121|
 
-(At this time, the comment_count of the comment which id is 17ff0e30-050a-4af3-b803-af4fe3b0d380 is incremented by 1)
+(At this time, the comment_count of the comment which id is a4203cb4-966d-46bc-9d2d-5309d238f20e is incremented by 1)
