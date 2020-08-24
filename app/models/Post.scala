@@ -30,7 +30,7 @@ object Post extends SQLSyntaxSupport[Post] {
 
   // 任意のpost_idとidが一致するPostのレコードを取得
   def findPost(post_id: String = UUID.randomUUID.toString)(
-    implicit session: DBSession = autoSession): Option[Post] = {
+      implicit session: DBSession = autoSession): Option[Post] = {
     withSQL {
       select.from(Post as p).where.eq(p.id, post_id)
     }.map(Post(p.resultName)).single.apply()
@@ -38,7 +38,7 @@ object Post extends SQLSyntaxSupport[Post] {
 
   // 全投稿一覧を取得
   def findAllPosts(
-                    implicit session: DBSession = autoSession): Seq[(Post, Seq[Comment], Seq[nestComment])] = {
+      implicit session: DBSession = autoSession): Seq[(Post, Seq[Comment], Seq[nestComment])] = {
     withSQL[Post] {
       select
         .from(Post.as(p))
@@ -59,7 +59,7 @@ object Post extends SQLSyntaxSupport[Post] {
 
   // 新規のPostを作成
   def create(id: String = UUID.randomUUID.toString, user_id: String, text: String)(
-    implicit session: DBSession = autoSession): Unit = {
+      implicit session: DBSession = autoSession): Unit = {
     withSQL {
       insert.into(Post).values(id, user_id, text, 0, ZonedDateTime.now())
     }.update.apply()
