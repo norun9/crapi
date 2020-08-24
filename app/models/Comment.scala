@@ -6,13 +6,13 @@ import scalikejdbc._
 
 // Commentがネストする子Comment
 case class nestComment(
-                        id: String = UUID.randomUUID.toString,
-                        user_id: String,
-                        text: String,
-                        parent_post_id: String,
-                        comment_count: Int,
-                        posted_at: LocalDateTime
-                      )
+    id: String = UUID.randomUUID.toString,
+    user_id: String,
+    text: String,
+    parent_post_id: String,
+    comment_count: Int,
+    posted_at: LocalDateTime
+)
 
 object nestComment extends SQLSyntaxSupport[nestComment] {
 
@@ -36,13 +36,13 @@ object nestComment extends SQLSyntaxSupport[nestComment] {
 }
 
 case class Comment(
-                    id: String = UUID.randomUUID.toString,
-                    user_id: String,
-                    text: String,
-                    parent_post_id: String,
-                    comment_count: Int,
-                    posted_at: LocalDateTime
-                  )
+    id: String = UUID.randomUUID.toString,
+    user_id: String,
+    text: String,
+    parent_post_id: String,
+    comment_count: Int,
+    posted_at: LocalDateTime
+)
 
 object Comment extends SQLSyntaxSupport[Comment] {
 
@@ -60,7 +60,7 @@ object Comment extends SQLSyntaxSupport[Comment] {
 
   //post_idとidが一致するPostかCommentに対する全投稿を取得
   def findAllComments(post_id: String = UUID.randomUUID.toString)(implicit session: DBSession =
-  autoSession): Seq[Comment] = {
+                                                                    autoSession): Seq[Comment] = {
     withSQL {
       select.from(Comment as c).where.eq(c.parent_post_id, post_id).orderBy(c.posted_at.desc)
     }.map(Comment(c.resultName))
@@ -70,7 +70,7 @@ object Comment extends SQLSyntaxSupport[Comment] {
 
   // 任意のcomment_idとidが一致するCommentのレコードを取得
   def findComment(comment_id: String = UUID.randomUUID.toString)(implicit session: DBSession =
-  autoSession): Option[Comment] = {
+                                                                   autoSession): Option[Comment] = {
     withSQL {
       select.from(Comment as c).where.eq(c.id, comment_id)
     }.map(Comment(c.resultName)).single.apply()
@@ -81,7 +81,7 @@ object Comment extends SQLSyntaxSupport[Comment] {
              user_id: String,
              text: String,
              parent_post_id: String = UUID.randomUUID.toString)(implicit session: DBSession =
-  autoSession): Unit = {
+                                                                  autoSession): Unit = {
     withSQL {
       insert.into(Comment).values(id, user_id, text, parent_post_id, 0, ZonedDateTime.now())
     }.update.apply()
