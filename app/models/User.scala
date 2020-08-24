@@ -23,4 +23,3 @@ object User extends SQLSyntaxSupport[User] {
       }.map(User(u.resultName)).single.apply()
     }
 }
-
