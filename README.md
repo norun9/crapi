@@ -14,7 +14,7 @@
 |17ff0e30-050a-4af3-b803-af4fe3b0d380|11111111-1111-1111-1111-111111111111|hello post|0|2020-08-24 22:33:51.580447|
 
 
-## Display Post list
+## Display post list
 
 ***request***
 
@@ -41,7 +41,7 @@
 (At this time, the comment_count of the post which id is 17ff0e30-050a-4af3-b803-af4fe3b0d380 is incremented by 1)
 
 
-## Display Comment list
+## Display comment list
 
 ***request***
 
