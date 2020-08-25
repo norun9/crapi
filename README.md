@@ -57,6 +57,10 @@
 
 `curl -X POST -H "Content-Type:application/json" -d '{"user_id": "11111111-1111-1111-1111-111111111111", "text": "nest comment"}' localhost:9000/posts/a4203cb4-966d-46bc-9d2d-5309d238f20e/comments/create`
 
+***response***
+
+`{"result":"OK"}`
+
 |Id|User_id|Text|Parent_post_id|Comment_count|Posted_at|
 |--|-------|----|--------------|-------------|---------|
 |7b4ec80d-6bab-4d3f-8014-bfcce3d21961|11111111-1111-1111-1111-111111111111|nest comment|a4203cb4-966d-46bc-9d2d-5309d238f20e|0|2020-08-24 22:38:59.027121|
