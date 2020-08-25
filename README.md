@@ -24,7 +24,7 @@
 
 `{"posts":[[{"id":"17ff0e30-050a-4af3-b803-af4fe3b0d380","user_id":"11111111-1111-1111-1111-111111111111","text":"hello post","comment_count":0,"posted_at":"2020-08-24T22:33:51.58"},[],[]]]}`
 
-(All post information including child comment and child post is returned)
+(All posts information including child comment and child post is returned)
 
 ## Create new comment
 
