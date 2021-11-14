@@ -1,5 +1,5 @@
 
-## Create new post 
+## create new post 
 
 ***request***
 
@@ -14,7 +14,7 @@
 |17ff0e30-050a-4af3-b803-af4fe3b0d380|11111111-1111-1111-1111-111111111111|hello post|0|2020-08-24 22:33:51.580447|
 
 
-## Display post list
+## display post list
 
 ***request***
 
@@ -26,7 +26,7 @@
 
 (All posts information including child comment and child post is returned)
 
-## Create new comment
+## create new comment
 
 ***request***
 
@@ -43,7 +43,7 @@
 (At this time, the comment_count of the post which id is 17ff0e30-050a-4af3-b803-af4fe3b0d380 is incremented by 1)
 
 
-## Display comment list
+## display comment list
 
 ***request***
 
@@ -53,7 +53,7 @@
 
 `{"comments":[{"id":"a4203cb4-966d-46bc-9d2d-5309d238f20e","user_id":"11111111-1111-1111-1111-111111111111","text":"hello comment","parent_post_id":"17ff0e30-050a-4af3-b803-af4fe3b0d380","comment_count":0,"posted_at":"2020-08-24T22:36:27.556"}]}`
 
-## Create new comment for optional comment
+## create new comment for optional comment
 
 ***request***
 
