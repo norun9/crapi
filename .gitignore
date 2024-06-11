@@ -1,10 +1,12 @@
 logs
 target
-/.idea
-/.idea_modules
-/.classpath
-/.project
-/.settings
+.idea
+.idea_modules
+.classpath
+.project
+.settings
 /RUNNING_PID
 conf/evolutions/default
 database
+.g8
+public
